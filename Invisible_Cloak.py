@@ -25,7 +25,6 @@ while(cap.isOpened()):
     #all this Comes in the while loop
     lower_red = np.array([0,120,70])
     upper_red = np.array([10,255,255]) # values is for red colour Cloth
-    mask1 = cv2.inRange(hsv, lower_red,upper_red)
     lower_red = np.array([170,120,70])
     upper_red =  np.array([180,255,255])
     
@@ -43,7 +42,7 @@ while(cap.isOpened()):
 
     #The basic work of bitwise_and is to combine these background and store it in res1
 
-    res2 = cv2.bitwise_and(img,img,mask=mask2)
+    res2 = cv2.bitwise_and(img,mask=mask1)
     final_output = cv2.addWeighted(res1,1,res2,1,0)
     cv2.imshow('Invisible Cloak',final_output)
     k = cv2.waitKey(10)
