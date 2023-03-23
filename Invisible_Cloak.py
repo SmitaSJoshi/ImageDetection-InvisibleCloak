@@ -25,6 +25,8 @@ while(cap.isOpened()):
     #all this Comes in the while loop
     lower_red = np.array([0,120,70])
     upper_red = np.array([10,255,255]) # values is for red colour Cloth
+    mask1 = cv2.inRange(hsv, lower_red,upper_red)
+
     lower_red = np.array([170,120,70])
     upper_red =  np.array([180,255,255])
     
@@ -40,6 +42,7 @@ while(cap.isOpened()):
 
     res1 = cv2.bitwise_and(background,background,mask=mask1)
 
+    res2 = cv2.bitwise_and(img,img,mask=mask2)
     #The basic work of bitwise_and is to combine these background and store it in res1
 
     res2 = cv2.bitwise_and(img,mask=mask1)
