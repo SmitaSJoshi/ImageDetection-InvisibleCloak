@@ -1,3 +1,14 @@
+#Steps to Build Invisible Cloak OpenCV Project:
+
+#Now we have everything ready. Below are the steps to create invisible cloak:
+
+#1.Import necessary packages and Initialize the camera.
+#2.Store a single frame before starting the infinite loop.
+#3.Detect the color of the cloth and create a mask.
+#4.Apply the mask on frames.
+#5.Combine masked frames together.
+#6.Removing unnecessary noise from masks.
+
 # Import Libraries
 import numpy as np
 import cv2
